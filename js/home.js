@@ -43,7 +43,7 @@
   $('[data-marquee] .marquee__track').innerHTML = insta + insta;
 
   /* ---------- Loader → hero reveal ---------- */
-  const loader = $('.loader'), countEl = $('.js-loader-count'), hero = $('.hero');
+  const loader = $('.loader'), hero = $('.hero');
   let shown = 0;
   const t0 = performance.now();
   const finish = () => {
@@ -56,8 +56,8 @@
   const run = () => {
     const el = performance.now() - t0;
     shown = lerp(shown, document.readyState === 'complete' ? 100 : Math.min(90, el / 16), 0.09);
-    countEl.textContent = Math.round(shown);
-    if ((shown > 99.5 && el > 1000) || el > 4500) { countEl.textContent = 100; finish(); } else requestAnimationFrame(run);
+    loader.style.setProperty('--p', shown / 100);
+    if ((shown > 99.5 && el > 1900) || el > 4500) { loader.style.setProperty('--p', 1); finish(); } else requestAnimationFrame(run);
   };
   reduced ? finish() : requestAnimationFrame(run);
 
