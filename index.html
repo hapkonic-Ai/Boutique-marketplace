@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2716%27 fill=%27%23f2d7cf%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2716%27 text-anchor=%27middle%27 font-family=%27Georgia%27 fill=%27%232b2622%27%3ELB%3C/text%3E%3C/svg%3E">
+  <title>Little Bloom Atelier — Heirloom Clothing for Little Ones</title>
+  <meta name="description" content="Hand-smocked, hand-embroidered heirloom clothing for children. Handcrafted in India in small batches.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body class="is-loading" data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <svg class="loader__stitch" viewBox="0 0 220 40"><path d="M5 20 Q 55 0 110 20 T 215 20" /></svg>
+      <p class="loader__brand"><span>Little</span> <span>Bloom</span></p>
+      <p class="loader__count"><span class="js-loader-count">0</span>%</p>
+    </div>
+  </div>
+
+  <div data-header></div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" data-hold>
+      <div class="hero__media">
+        <div class="hero__fallback" aria-hidden="true">
+          <span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span>
+          <span class="petal p4"></span><span class="petal p5"></span><span class="petal p6"></span>
+        </div>
+        <div class="hero__film">
+          <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/images/hero-poster.jpg">
+            <source src="assets/video/hero.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="hero__zoomblur" aria-hidden="true"></div>
+        <div class="hero__tint" aria-hidden="true"></div>
+        <div class="hero__grain" aria-hidden="true"></div>
+        <div class="hero__vignette" aria-hidden="true"></div>
+        <div class="hero__shade"></div>
+      </div>
+      <div class="hero__content">
+        <p class="eyebrow reveal-up">Little Bloom Atelier <span class="dot">•</span> Handcrafted in India</p>
+        <h1 class="hero__title split">House of Heirloom Childhood</h1>
+        <p class="hero__lede reveal-up">Hand-smocked pieces made <em>slowly</em>, worn <em>joyfully</em>, and passed down <em>lovingly</em> — from one little adventurer to the next.</p>
+        <div class="hero__ctas reveal-up">
+          <a href="shop.html" class="btn btn--light magnetic">Shop the Collection</a>
+          <a href="bespoke.html" class="link-u">Made-to-Order</a>
+        </div>
+      </div>
+      <a href="#categories" class="hero__scroll" aria-label="Scroll down"><span></span></a>
+      <button class="hero__sound" aria-label="Pause background video">Pause</button>
+    </section>
+
+    <!-- CATEGORY TILES -->
+    <section class="cats" id="categories">
+      <a href="shop.html?category=Frocks" class="cat" data-cursor="Explore">
+        <div class="media media--tall reveal-clip parallax" data-src="assets/images/cat-dresses.jpg" data-tone="blush"></div>
+        <div class="cat__text"><h3 class="h3">Frocks &amp; Kurta Sets</h3><p>Smocked, stitched and made for twirling.</p><span class="link-u">Shop Frocks</span></div>
+      </a>
+      <a href="shop.html?category=Bonnets%20%26%20Bows" class="cat" data-cursor="Explore">
+        <div class="media media--tall reveal-clip parallax" data-src="assets/images/cat-accessories.jpg" data-tone="sage"></div>
+        <div class="cat__text"><h3 class="h3">Bonnets &amp; Accessories</h3><p>Bonnets, bows, baskets and treasures for tiny hands.</p><span class="link-u">Shop Accessories</span></div>
+      </a>
+    </section>
+
+    <!-- CATEGORY STRIP -->
+    <section class="catstrip">
+      <div class="section-head"><p class="eyebrow reveal-up">Shop by Category</p><h2 class="h2 split">Something for every little moment</h2><a href="shop.html" class="link-u reveal-up">View all</a></div>
+      <div class="catstrip__row" data-catstrip></div>
+    </section>
+
+    <!-- COLLECTION 1 -->
+    <section class="collection" data-collection="meadow">
+      <div class="section-head">
+        <p class="eyebrow reveal-up">Collection N°1</p>
+        <h2 class="h2 split">The Meadow Collection</h2>
+        <a href="shop.html?collection=meadow" class="link-u reveal-up">Discover</a>
+      </div>
+      <div class="slider" data-slider data-slides="meadow"></div>
+      <div class="subhead"><h3 class="h3 reveal-up">Discover the Whole Collection</h3><a href="shop.html?collection=meadow" class="link-u reveal-up">View all Meadow</a></div>
+      <div class="pgrid" data-grid="meadow"></div>
+    </section>
+
+    <!-- HORIZONTAL GALLERY -->
+    <section class="hgallery" aria-label="Lookbook">
+      <div class="hgallery__sticky">
+        <div class="hgallery__track">
+          <div class="hgallery__intro"><p class="eyebrow">Lookbook</p><h2 class="h2">Summer<br><em>at Nani's house</em></h2><a href="shop.html?sort=new" class="link-u">Shop the look</a></div>
+          <div class="media hgallery__item" data-src="assets/images/look-1.jpg" data-tone="butter"></div>
+          <div class="media hgallery__item hgallery__item--sm" data-src="assets/images/look-2.jpg" data-tone="sky"></div>
+          <div class="media hgallery__item" data-src="assets/images/look-3.jpg" data-tone="blush"></div>
+          <div class="media hgallery__item hgallery__item--sm" data-src="assets/images/look-4.jpg" data-tone="sage"></div>
+          <div class="media hgallery__item" data-src="assets/images/insta-9.jpg" data-tone="butter"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BESPOKE -->
+    <section class="bespoke" id="bespoke">
+      <div class="bespoke__intro">
+        <p class="eyebrow reveal-up">Made-to-Order Atelier</p>
+        <h2 class="h2 split">A piece stitched with their name on it</h2>
+        <p class="reveal-up">Naamkaran outfits, first-birthday frocks, mini kurtas for Diwali and the family wedding — designed around your child's story, their favourite flower, even their initials hidden in the hem.</p>
+        <a href="bespoke.html" class="btn btn--dark magnetic reveal-up">Begin a Commission</a>
+      </div>
+      <ol class="steps">
+        <li class="step reveal-up"><span class="step__num">I</span><h4>Consultation</h4><p>A relaxed chat — at the studio, on a video call or over WhatsApp — about the occasion and little details.</p></li>
+        <li class="step reveal-up"><span class="step__num">II</span><h4>Sketch</h4><p>We hand-draw the design and send fabric &amp; thread swatches to your door.</p></li>
+        <li class="step reveal-up"><span class="step__num">III</span><h4>Stitching</h4><p>Our karigars bring it to life by hand, with progress photos along the way.</p></li>
+        <li class="step reveal-up"><span class="step__num">IV</span><h4>Keepsake Delivery</h4><p>Shipped anywhere in India in a cotton keepsake box, ready to be treasured.</p></li>
+      </ol>
+    </section>
+
+    <!-- FULL BLEED -->
+    <section class="bleed">
+      <div class="media bleed__media parallax-strong" data-src="assets/images/bleed-explorer.jpg" data-tone="sky"></div>
+      <div class="bleed__text"><h2 class="display split">The Little Explorer</h2><p class="reveal-up">Curious by nature. Dressed for wonder.</p><a href="shop.html?collection=woodland" class="btn btn--light magnetic reveal-up">Shop Woodland</a></div>
+    </section>
+
+    <!-- ORIGIN -->
+    <section class="origin" id="world">
+      <div class="media media--square reveal-clip parallax" data-src="assets/images/origin-studio.jpg" data-tone="butter"></div>
+      <div class="origin__text">
+        <p class="eyebrow reveal-up">Our World</p>
+        <h2 class="h2 split">Born at the kitchen table</h2>
+        <p class="reveal-up">It began with a hand-me-down frock, a tin of embroidery thread and a little one who refused to wear anything else. Our small studio still makes every piece the same way — by hand, in breathable mulmul and cotton, in colours borrowed from the garden.</p>
+        <a href="our-world.html" class="btn btn--line magnetic reveal-up">Discover our World</a>
+      </div>
+      <ul class="swatches" data-swatches></ul>
+    </section>
+
+    <!-- CLOSER LOOK -->
+    <section class="closer">
+      <div class="closer__media">
+        <div class="media media--tall reveal-clip" data-src="assets/images/closer-1.jpg" data-tone="blush"></div>
+        <div class="media closer__float reveal-clip" data-src="assets/images/closer-detail.jpg" data-tone="butter"></div>
+      </div>
+      <div class="closer__text">
+        <p class="eyebrow reveal-up">A Closer Look — Rosebud Chikankari Frock</p>
+        <h2 class="h2 split">Stitched, not manufactured</h2>
+        <div class="stats">
+          <div class="stat reveal-up"><b class="js-count" data-to="12480">0</b><span>hand stitches per frock</span></div>
+          <div class="stat reveal-up"><b class="js-count" data-to="40">0</b><span>hours in the making</span></div>
+          <div class="stat reveal-up"><b><span class="js-count" data-to="100">0</span>%</b><span>organic mulmul cotton</span></div>
+        </div>
+        <a href="product.html?id=rosebud-chikankari-frock" class="btn btn--dark magnetic reveal-up">View product</a>
+      </div>
+    </section>
+
+    <!-- COLLECTION 2 -->
+    <section class="collection collection--alt" data-collection="cloud">
+      <div class="section-head">
+        <p class="eyebrow reveal-up">Collection N°2</p>
+        <h2 class="h2 split">The Cloud Collection</h2>
+        <a href="shop.html?collection=cloud" class="link-u reveal-up">Discover</a>
+      </div>
+      <div class="slider" data-slider data-slides="cloud"></div>
+      <div class="subhead"><h3 class="h3 reveal-up">Discover the Whole Collection</h3><a href="shop.html?collection=cloud" class="link-u reveal-up">View all Cloud</a></div>
+      <div class="pgrid" data-grid="cloud"></div>
+    </section>
+
+    <!-- SUSTAINABILITY -->
+    <section class="sustain">
+      <div class="sustain__top">
+        <div class="media media--wide reveal-clip parallax" data-src="assets/images/sustain.jpg" data-tone="sage"></div>
+        <div class="sustain__text">
+          <p class="eyebrow reveal-up">Gentle on Little Skin &amp; the Planet</p>
+          <h2 class="h2 split">Made to be outgrown, never thrown away</h2>
+          <p class="reveal-up">Natural fibres, plant-based dyes and seams generous enough to let out as they grow. When it's finally too small, our hand-me-down programme gives it a second (and third) story.</p>
+          <a href="our-world.html#sustainability" class="link-u reveal-up">Learn More</a>
+        </div>
+      </div>
+      <ul class="features">
+        <li class="feature reveal-up"><svg viewBox="0 0 48 48"><path d="M24 42c-9-6-14-13-14-21a14 14 0 0 1 28 0c0 8-5 15-14 21Z"/><path d="M24 42V18"/></svg><h4>Organic Mulmul</h4><p>Breathable, soft and made for the heat.</p></li>
+        <li class="feature reveal-up"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M14 24h20M24 14v20"/></svg><h4>Natural Dyes</h4><p>Indigo, haldi, madder &amp; pomegranate.</p></li>
+        <li class="feature reveal-up"><svg viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="4"/><path d="M10 20h28"/></svg><h4>Artisan-Made</h4><p>Fair wages for karigars in Lucknow &amp; Jaipur.</p></li>
+        <li class="feature reveal-up"><svg viewBox="0 0 48 48"><path d="M10 30c6-14 22-14 28 0"/><path d="M14 36h20"/></svg><h4>Hand-me-down Ready</h4><p>Built to survive every cousin.</p></li>
+      </ul>
+    </section>
+
+    <!-- THREE WORLDS -->
+    <section class="worlds">
+      <div class="section-head section-head--center"><p class="eyebrow reveal-up">Three Worlds, One Wardrobe</p><h2 class="h2 split">Find their little world</h2></div>
+      <div class="worlds__grid" data-worlds></div>
+    </section>
+
+    <!-- HERITAGE -->
+    <section class="heritage" id="heritage">
+      <div class="media heritage__media parallax-strong" data-src="assets/images/heritage.jpg" data-tone="butter"></div>
+      <div class="heritage__card">
+        <p class="eyebrow reveal-up">Since Nani's Sewing Box</p>
+        <h2 class="h2 split">Three generations of stitches</h2>
+        <p class="reveal-up">The techniques we use were taught at a grandmother's knee — chikankari, kantha, smocking and hand-rolled hems — and we're keeping them alive one little garment at a time.</p>
+        <a href="the-maker.html" class="btn btn--line magnetic reveal-up">Meet the Maker</a>
+        <ol class="timeline">
+          <li class="reveal-up"><b>1968</b><span>Nani stitches her first jhabla in Lucknow.</span></li>
+          <li class="reveal-up"><b>1994</b><span>Her daughter learns smocking at the same table.</span></li>
+          <li class="reveal-up"><b>2024</b><span>Little Bloom Atelier opens its doors.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section class="insta">
+      <div class="section-head section-head--center"><p class="eyebrow reveal-up">@littlebloomatelier</p><h2 class="h2 split">Tiny moments, shared</h2><a href="#" class="link-u reveal-up">Follow on Instagram</a></div>
+      <div class="marquee" data-marquee><div class="marquee__track"></div></div>
+    </section>
+
+    <!-- PRESS -->
+    <section class="press">
+      <p class="eyebrow">Loved by the loveliest little shops</p>
+      <ul class="press__list"><li>The Little Edit</li><li>Mumbai Mums</li><li>Kids Couture India</li><li>Nursery Notes</li></ul>
+    </section>
+  </main>
+
+  <div data-footer></div>
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

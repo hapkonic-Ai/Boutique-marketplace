@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2716%27 fill=%27%23f2d7cf%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2716%27 text-anchor=%27middle%27 font-family=%27Georgia%27 fill=%27%232b2622%27%3ELB%3C/text%3E%3C/svg%3E">
+  <title>My Account — Little Bloom Atelier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body data-page="account">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-header></div>
+  <main id="main" class="js-account"></main>
+  <div data-footer></div>
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script>
+    /* Demo account: stored on this device only */
+    (() => {
+      const { $, $$, esc } = LB;
+      const root = $('.js-account');
+      let tab = location.hash === '#orders' ? 'orders' : 'orders';
+      let authTab = 'login';
+
+      const auth = () => {
+        root.innerHTML = `<section class="auth">
+          <div class="media" data-src="assets/images/insta-7.jpg" data-tone="blush"></div>
+          <div class="auth__panel">
+            <p class="eyebrow">My Account</p>
+            <h1 class="h2">${authTab === 'login' ? 'Welcome back' : 'Join the family'}</h1>
+            <div class="tabs"><button data-auth="login" class="${authTab === 'login' ? 'is-on' : ''}">Log in</button><button data-auth="signup" class="${authTab === 'signup' ? 'is-on' : ''}">Create account</button></div>
+            <form class="form js-auth" novalidate>
+              ${authTab === 'signup' ? '<label class="field"><span>Your name</span><input name="name" required autocomplete="name"></label>' : ''}
+              <label class="field"><span>Email or mobile</span><input name="email" required autocomplete="username"></label>
+              <label class="field"><span>Password</span><input name="password" type="password" required minlength="6" autocomplete="${authTab === 'login' ? 'current-password' : 'new-password'}"></label>
+              <button class="btn btn--dark btn--block">${authTab === 'login' ? 'Log in' : 'Create account'}</button>
+              <p class="demo-note">Demo account — details are only saved in this browser.</p>
+            </form>
+          </div></section>`;
+        LB.initMedia(root);
+      };
+
+      const dash = user => {
+        const orders = LB.get('orders', []), addr = LB.get('address', null);
+        const panel = {
+          orders: orders.length ? orders.map(o => `<div class="order">
+              <div class="order__head"><span>Order <b>${o.id}</b> · ${new Date(o.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span><span class="status">Confirmed · arriving ${new Date(o.eta).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}</span></div>
+              <div class="order__imgs">${o.items.map(l => { const p = LB.byId(l.id); return p ? `<a href="product.html?id=${p.id}"><img src="${p.images[0]}" alt="${esc(p.name)}"></a>` : ''; }).join('')}</div>
+              <div class="order__head"><span>${o.items.reduce((a, l) => a + l.qty, 0)} items · ${o.city || ''}</span><b>${LB.money(o.total)}</b></div></div>`).join('')
+            : `<div class="empty"><h3>No orders yet</h3><a href="shop.html" class="btn btn--dark">Start Shopping</a></div>`,
+          address: addr ? `<div class="order"><b>${esc(addr.name)}</b><p class="muted">${esc(addr.line1)}${addr.line2 ? ', ' + esc(addr.line2) : ''}<br>${esc(addr.city)}, ${esc(addr.state)} – ${esc(addr.pin)}<br>+91 ${esc(addr.phone)}</p></div>` : '<p class="muted">No saved addresses yet — they\'ll appear here after your first checkout.</p>',
+          profile: `<form class="form js-profile" style="max-width:480px"><label class="field"><span>Name</span><input name="name" value="${esc(user.name || '')}"></label><label class="field"><span>Email / mobile</span><input name="email" value="${esc(user.email || '')}"></label><button class="btn btn--dark">Save changes</button></form>`,
+        }[tab];
+        root.innerHTML = `<nav class="crumbs"><a href="index.html">Home</a><span>Account</span></nav>
+          <header class="page-hero"><p class="eyebrow">My Account</p><h1 class="h2">Hello, ${esc((user.name || 'friend').split(' ')[0])} ✿</h1></header>
+          <section class="dash">
+            <nav>${[['orders', 'My Orders'], ['address', 'Addresses'], ['profile', 'Profile']].map(([k, l]) => `<button data-tab="${k}" class="${tab === k ? 'is-on' : ''}">${l}</button>`).join('')}<a href="wishlist.html" class="link-u" style="margin:12px 16px">Wishlist (${LB.wish().length})</a><button data-logout>Log out</button></nav>
+            <div>${panel}</div>
+          </section>`;
+      };
+
+      const render = () => { const u = LB.get('user', null); u ? dash(u) : auth(); };
+      root.addEventListener('click', e => {
+        const a = e.target.closest('[data-auth]'); if (a) { authTab = a.dataset.auth; render(); }
+        const t = e.target.closest('[data-tab]'); if (t) { tab = t.dataset.tab; render(); }
+        if (e.target.closest('[data-logout]')) { LB.set('user', null); LB.toast('Logged out'); render(); }
+      });
+      root.addEventListener('submit', e => {
+        e.preventDefault();
+        const f = e.target, data = Object.fromEntries(new FormData(f));
+        if (f.matches('.js-auth')) {
+          const bad = $$('[required]', f).find(el => !el.value.trim() || !el.checkValidity());
+          if (bad) { bad.classList.add('is-invalid'); bad.focus(); return LB.toast(bad.name === 'password' ? 'Password needs at least 6 characters' : 'Please fill in all fields'); }
+          LB.set('user', { name: data.name || (LB.get('address', {}) || {}).name || data.email.split('@')[0], email: data.email });
+          LB.toast(authTab === 'login' ? 'Welcome back ✿' : 'Account created ✿');
+        } else { LB.set('user', data); LB.toast('Profile saved'); }
+        render();
+      });
+      render();
+    })();
+  </script>
+</body>
+</html>
