@@ -189,7 +189,22 @@ body.cart-open .cart__panel { transform: none; }
 .pcard__price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; margin-top: 8px; font-size: 14px; }
 .pcard__price b { font-weight: 500; }
 .pcard__price s { color: var(--muted); font-size: 12px; }
-.pcard__price em { font: 500 12px var(--sans); color: var(--rose); }
+.pcard__price em { font: 500 12px var(--sans); color: var(--accent); }
+
+/* Collection colours: tinted card tiles, coloured badges and section backgrounds */
+.pcard { --tint: #f3e8dc; --accent: var(--rose); background: var(--tint); border-radius: 10px; padding: 8px 8px 14px; transition: transform .6s var(--ease), box-shadow .6s var(--ease); }
+.pcard[data-col="meadow"] { --tint: #f8e3dc; --accent: #cf7f6d; }
+.pcard[data-col="cloud"] { --tint: #e0eaf1; --accent: #6f93ad; }
+.pcard[data-col="woodland"] { --tint: #e4ead9; --accent: #6f8a5e; }
+.pcard:hover { transform: translateY(-4px); box-shadow: 0 22px 40px -26px rgba(43,38,34,.45); }
+.pcard .pcard__info, .pcard .pcard__dots { padding-left: 6px; padding-right: 6px; }
+.pcard__badge { background: var(--accent); color: #fff; }
+.pcard__badge--new { background: #f0cf6b; color: var(--ink); }
+.pcard__badge--limited { background: #a98bc4; }
+.pcard__badge--heirloom { background: var(--ink); color: var(--cream); }
+.collection[data-collection="meadow"] { background: #f9e7e1; }
+.collection[data-collection="cloud"] { background: #e3edf3; }
+.collection .pcard { --tint: rgba(255,255,255,.6); }
 .pcard__dots { display: flex; gap: 5px; margin-top: 9px; }
 .pcard__dots i { width: 11px; height: 11px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--line); }
 

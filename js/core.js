@@ -123,13 +123,13 @@
     const ld = eager ? 'eager' : 'lazy';
     const url = `product.html?id=${p.id}`;
     return `
-    <article class="pcard" data-id="${p.id}">
+    <article class="pcard" data-id="${p.id}" data-col="${p.collection}">
       <div class="pcard__media">
         <a href="${url}" class="pcard__link" aria-label="${LB.esc(p.name)}" data-cursor="View">
           <img class="pcard__img" src="${p.images[0]}" alt="${LB.esc(p.name)}" loading="${ld}" decoding="async">
           ${p.images[1] ? `<img class="pcard__img pcard__img--alt" src="${p.images[1]}" alt="" loading="${ld}" decoding="async">` : ''}
         </a>
-        ${p.badge ? `<span class="pcard__badge">${p.badge}</span>` : ''}
+        ${p.badge ? `<span class="pcard__badge pcard__badge--${p.badge.toLowerCase()}">${p.badge}</span>` : ''}
         <button class="pcard__wish ${LB.inWish(p.id) ? 'is-on' : ''}" data-wish="${p.id}" aria-label="Save to wishlist">${LB.icons.heart}</button>
         <span class="pcard__rating">${p.rating} ${LB.icons.star} <i>| ${p.reviews}</i></span>
         ${quick ? `<div class="pcard__quick"><p>Quick add</p><div>${p.sizes.map(s => `<button data-quick="${p.id}" data-size="${s}">${s}</button>`).join('')}</div></div>` : ''}

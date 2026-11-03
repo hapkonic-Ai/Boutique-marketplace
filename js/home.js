@@ -31,8 +31,15 @@
       <span class="catcard__img"><img src="${img}" alt="" loading="lazy"></span><b>${c}</b><small>${list.length} ${list.length === 1 ? 'style' : 'styles'}</small></a>`;
   }).join('');
 
-  $('[data-swatches]').innerHTML = [['Gulabi', '#f2c6b8'], ['Haldi', '#f3e3b5'], ['Pista', '#b5c2a8'], ['Neel', '#cfdde6'], ['Lavender', '#d6cde4'], ['Kesari', '#e09a85']]
-    .map(([n, c], i) => `<li class="swatch reveal-up" style="--d:${i * 0.07}s"><span style="background:${c}"></span><small>${n}</small></li>`).join('');
+  const used = new Set();
+  $('[data-swatches]').innerHTML = [['Gulabi', 'Gulabi Pink'], ['Haldi', 'Haldi Yellow'], ['Pista', 'Pista Green'], ['Neel', 'Powder Blue'], ['Lavender', 'Lavender'], ['Peach', 'Peach']]
+    .map(([label, name], i) => {
+      const list = LB.products.filter(p => p.colours.some(c => c.name === name));
+      const pick = list.find(p => !used.has(p.id)) || list[0];
+      used.add(pick.id);
+      const hex = pick.colours.find(c => c.name === name).hex;
+      return `<li class="swatch reveal-up" style="--d:${i * 0.07}s"><a href="shop.html?colour=${encodeURIComponent(name)}"><span class="swatch__ring" style="--c:${hex}"><img src="${pick.images[0]}" alt="${LB.esc(label)} pieces" loading="eager" decoding="async"></span><b>${label}</b><small>${list.length} ${list.length === 1 ? 'style' : 'styles'}</small></a></li>`;
+    }).join('');
 
   $('[data-worlds]').innerHTML = Object.entries(LB.collections).map(([k, c], i) => `
     <a href="shop.html?collection=${k}" class="world reveal-up" style="--d:${i * 0.1}s" data-cursor="Enter">
