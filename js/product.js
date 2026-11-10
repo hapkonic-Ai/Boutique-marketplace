@@ -9,7 +9,7 @@
     return;
   }
 
-  document.title = `${p.name} — Little Bloom Atelier`;
+  document.title = `${p.name} — House of Tarigai`;
   LB.pushRecent(p.id);
   const coll = LB.collections[p.collection];
   let img = 0, colour = p.colours[0].name, size = p.sizes.length === 1 ? p.sizes[0] : '', qty = 1;

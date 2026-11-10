@@ -104,7 +104,7 @@
     const title = state.q ? `Results for “${state.q}”` : coll ? coll.title : state.category.length === 1 ? state.category[0] : state.sort === 'new' ? 'New Arrivals' : 'Shop All';
     $('.js-title').textContent = title;
     $('.js-crumb').textContent = title;
-    document.title = `${title} — Little Bloom Atelier`;
+    document.title = `${title} — House of Tarigai`;
     $('.js-sub').textContent = coll ? coll.line : 'Heirloom pieces, handcrafted in small batches.';
     $('.js-banner').innerHTML = coll ? `<div class="shop-banner"><img src="${coll.banner}" alt=""><p class="eyebrow" style="color:#fff">Collection</p><h2>${coll.title}</h2><p>${coll.line}</p></div>` : '';
 

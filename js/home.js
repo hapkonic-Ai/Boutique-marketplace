@@ -64,7 +64,7 @@
     const el = performance.now() - t0;
     shown = lerp(shown, document.readyState === 'complete' ? 100 : Math.min(90, el / 16), 0.09);
     loader.style.setProperty('--p', shown / 100);
-    if ((shown > 99.5 && el > 1900) || el > 4500) { loader.style.setProperty('--p', 1); finish(); } else requestAnimationFrame(run);
+    if ((shown > 99.5 && el > 2400) || el > 4500) { loader.style.setProperty('--p', 1); finish(); } else requestAnimationFrame(run);
   };
   reduced ? finish() : requestAnimationFrame(run);
 

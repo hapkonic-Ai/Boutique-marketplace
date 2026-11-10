@@ -1,5 +1,5 @@
 /* =========================================================
-   Little Bloom Atelier — catalogue & site data
+   House of Tarigai — catalogue & site data
    Demo data: prices, ratings and stock are placeholders.
    ========================================================= */
 window.LB = window.LB || {};
@@ -107,7 +107,7 @@ window.LB = window.LB || {};
 
   LB.ages = AGES;
   LB.coupons = {
-    BLOOM10: { label: '10% off your order', type: 'pct', value: 10, min: 0 },
+    TARIGAI10: { label: '10% off your order', type: 'pct', value: 10, min: 0 },
     FIRST500: { label: '₹500 off orders above ₹3,999', type: 'flat', value: 500, min: 3999 },
     TWIRL15: { label: '15% off orders above ₹6,999', type: 'pct', value: 15, min: 6999 },
   };

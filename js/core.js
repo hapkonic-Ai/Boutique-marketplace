@@ -1,5 +1,5 @@
 /* =========================================================
-   Little Bloom Atelier — shared layout, store & interactions
+   House of Tarigai — shared layout, store & interactions
    Loaded on every page after data.js
    ========================================================= */
 (() => {
@@ -160,7 +160,7 @@
   const headerHTML = `
   <div class="announce"><div class="announce__track">${Array(2).fill(`
     <span>Free shipping across India on orders above ₹2,999</span><span>✿</span>
-    <span>Use code <b>BLOOM10</b> for 10% off your first order</span><span>✿</span>
+    <span>Use code <b>TARIGAI10</b> for 10% off your first order</span><span>✿</span>
     <span>Cash on Delivery &amp; UPI available</span><span>✿</span>
     <span>Handcrafted in small batches</span><span>✿</span>`).join('')}</div></div>
   <header class="header">
@@ -170,7 +170,7 @@
         ${nav.map(([h, t, mega]) => `<li ${mega ? 'class="has-mega"' : ''}><a href="${h}" class="link-u ${isActive(h) ? 'is-active' : ''}">${t}</a></li>`).join('')}
       </ul>
     </nav>
-    <a href="index.html" class="header__logo" aria-label="Little Bloom Atelier home">Little<em>Bloom</em></a>
+    <a href="index.html" class="header__logo" aria-label="House of Tarigai home"><span class="logo"><small>House of</small><b>tar<i>ı</i>ga<i>ı</i></b></span></a>
     <div class="header__actions">
       <select class="currency" aria-label="Currency">${Object.keys(RATES).map(c => `<option ${c === LB.currency ? 'selected' : ''}>${c}</option>`).join('')}</select>
       <button class="icon-btn js-search-open" aria-label="Search">${LB.icons.search}</button>
@@ -245,9 +245,9 @@
       <div><h5>The House</h5><a href="our-world.html">Our World</a><a href="the-maker.html">The Maker</a><a href="care.html#size-guide">Size Guide</a><a href="care.html#shipping">Shipping &amp; Returns</a><a href="care.html#faq">FAQ</a><a href="care.html#contact">Contact</a></div>
       <div><h5>Visit the Studio</h5><p>Studio address<br>City, State – PIN code</p><p>Tue – Sun 11am – 7pm<br>Monday closed</p><p>WhatsApp: +91 XXXXX XXXXX</p></div>
     </div>
-    <div class="footer__big">Little<em>Bloom</em></div>
+    <div class="footer__big logo"><b>tar<i>ı</i>ga<i>ı</i></b></div>
     <div class="footer__base">
-      <p>© ${new Date().getFullYear()} Little Bloom Atelier · Made in India</p>
+      <p>© ${new Date().getFullYear()} House of Tarigai · Made in India</p>
       <p><a href="policies.html#privacy">Privacy Policy</a> · <a href="policies.html#terms">Terms &amp; Conditions</a></p>
       <button class="link-u js-top">Back to top ↑</button>
     </div>

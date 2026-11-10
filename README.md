@@ -2,7 +2,7 @@
 
 <br>
 
-# 🌸 Little Bloom Atelier
+# 🌸 House of Tarigai
 
 ### *House of Heirloom Childhood*
 
@@ -32,7 +32,7 @@
 
 ## ✨ Overview
 
-Little Bloom Atelier is a **frontend-only demo store** with a soft, editorial look. Every page shares one header, footer, search, mega menu and bag drawer. Bag, wishlist, account and orders are stored in the browser, so the whole store works **with no backend and no build step**. Open `index.html` or push the folder to Vercel.
+House of Tarigai is a **frontend-only demo store** with a soft, editorial look. Every page shares one header, footer, search, mega menu and bag drawer. Bag, wishlist, account and orders are stored in the browser, so the whole store works **with no backend and no build step**. Open `index.html` or push the folder to Vercel.
 
 > 🎀 Prices in **₹ INR** (Indian number format), all Indian states at checkout, UPI / Card / Net Banking / COD, and PIN code delivery checks.
 
@@ -80,7 +80,7 @@ Little Bloom Atelier is a **frontend-only demo store** with a soft, editorial lo
 
 ### 💳 Bag & checkout
 - Slide-out bag drawer with a **free-shipping progress bar**
-- Coupons: `BLOOM10` · `FIRST500` · `TWIRL15`
+- Coupons: `TARIGAI10` · `FIRST500` · `TWIRL15`
 - Gift wrap, move to wishlist, size and quantity edits
 - Checkout checks every field (10-digit phone, 6-digit PIN)
 - Standard or express delivery · UPI / Card / Net Banking / COD

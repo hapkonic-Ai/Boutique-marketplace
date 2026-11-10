@@ -26,7 +26,7 @@
 
 ## On-screen text
 **None in the video.** The site adds the headline over it as live HTML:
-> *Little Bloom Atelier • est. 2024* — **House of Heirloom Childhood**
+> *House of Tarigai • est. 2024* — **House of Heirloom Childhood**
 
 Keeping the text in HTML keeps it sharp, translatable and readable by search engines.
 
