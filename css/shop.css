@@ -194,14 +194,15 @@ body.cart-open .cart__panel { transform: none; }
 /* Collection colours: tinted card tiles, coloured badges and section backgrounds */
 .pcard { --tint: #eee5d8; --accent: var(--rose); background: var(--tint); border-radius: 10px; padding: 8px 8px 14px; transition: transform .6s var(--ease), box-shadow .6s var(--ease); }
 .pcard[data-col="meadow"] { --tint: #f1e1d4; --accent: #c86a46; }
-.pcard[data-col="cloud"] { --tint: #ebe4d8; --accent: #8a6a50; }
+.pcard[data-col="cloud"] { --tint: #ebe4d8; --accent: var(--chocolate); }
 .pcard[data-col="woodland"] { --tint: #e4e2d5; --accent: #7d745f; }
 .pcard:hover { transform: translateY(-4px); box-shadow: 0 22px 40px -26px rgba(75,59,46,.45); }
 .pcard .pcard__info, .pcard .pcard__dots { padding-left: 6px; padding-right: 6px; }
-.pcard__badge { background: var(--accent); color: #fff; }
-.pcard__badge--new { background: var(--terracotta); color: #fff; }
-.pcard__badge--limited { background: var(--olive); }
-.pcard__badge--heirloom { background: var(--ink); color: var(--cream); }
+.pcard__badge { background: var(--terracotta); color: #fff; }
+.pcard__badge--bestseller { background: var(--terracotta); }
+.pcard__badge--new { background: var(--olive); color: #fff; }
+.pcard__badge--limited { background: var(--chocolate); }
+.pcard__badge--heirloom { background: var(--cream); color: var(--chocolate); }
 .collection[data-collection="meadow"] { background: #efe2d4; }
 .collection[data-collection="cloud"] { background: #e5e2d5; }
 .collection .pcard { --tint: rgba(255,255,255,.6); }

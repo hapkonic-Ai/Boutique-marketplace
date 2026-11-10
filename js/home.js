@@ -38,7 +38,7 @@
       const pick = list.find(p => !used.has(p.id)) || list[0];
       used.add(pick.id);
       const hex = pick.colours.find(c => c.name === name).hex;
-      return `<li class="swatch reveal-up" style="--d:${i * 0.07}s"><a href="shop.html?colour=${encodeURIComponent(name)}"><span class="swatch__ring" style="--c:${hex}"><img src="${pick.images[0]}" alt="${LB.esc(label)} pieces" loading="eager" decoding="async"></span><b>${label}</b><small>${list.length} ${list.length === 1 ? 'style' : 'styles'}</small></a></li>`;
+      return `<li class="swatch reveal-up" style="--d:${i * 0.07}s"><a href="shop.html?colour=${encodeURIComponent(name)}"><span class="swatch__ring" style="--c:${['var(--terracotta)', 'var(--olive)', 'var(--chocolate)'][i % 3]}"><img src="${pick.images[0]}" alt="${LB.esc(label)} pieces" loading="eager" decoding="async"></span><b><i style="background:${hex}"></i>${label}</b><small>${list.length} ${list.length === 1 ? 'style' : 'styles'}</small></a></li>`;
     }).join('');
 
   $('[data-worlds]').innerHTML = Object.entries(LB.collections).map(([k, c], i) => `
